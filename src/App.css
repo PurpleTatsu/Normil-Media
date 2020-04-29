@@ -1,38 +1,634 @@
-.App {
+/* normil media colors
+#81C362 green
+rgba(129, 195, 98, 1)
+#3C4395  purple
+rgba(60, 67, 149, 1) */
+
+body{
+  font-family: 'Lato', sans-serif;
+  /* font-family: 'Francois One', sans-serif; */
+  background: #759ea3;
+}
+
+header{
+  height: 80px;
+  width: 100%;
+  background: #097C80;
+  /* background: #004B56; */
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 0.8em;
+  align-items: center;
+}
+header h1{
+  margin: 0;
+    font-size: 3.5em;
+    color: #81C362;
+    transition: 0.2s ease-in-out 0.2s;
+}
+header h1:hover{
+  color: #3C4395;
+
+}
+
+header a{
+  /* color: white; */
+  text-decoration: none;
+}
+header h2{
+  margin: auto;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  padding-bottom: 8px;
+  font-size: 1.5em;
+  transition: all .5s ease;
+}
+header h2:hover{
+  font-size: 1.6em;
+}
+header h2:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #3c4395, #006fb8, #0092b1, #00af8a, #81c362);  
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+header h2:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  transition: all 0.3s ease-in-out 0s;
+}
+.contact{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size:1.2em;
+}
+.contact a{
+  text-decoration: none;  
+  color: white;
+
+}
+
+
+.contact section{
+  display: flex;
+  align-items: center;
+  margin: .3em 0;
+}
+.contact section p{
+  margin: 0;
+}
+
+header svg{
+  fill: white;
+}
+.contact-icons{
+  height: 2em;
+  width: auto;
+  margin-right: 0.5em;
+}
+.contact-icons:hover{
+  fill: #3c4395;
+}
+
+#hero{
+  height: 100vh;
+  width: auto;
+  background-image: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80);
+  box-shadow: 5px 5px 5px #097C80;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hero p{
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3em;
+  animation-name: fadeInUp;
+  animation-delay: 1s;
+  animation-duration: 4s;
+  animation-fill-mode: forwards; 
+  padding: 20% 5% 0 5%;  
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+#services{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#services-info {
+  
   display: flex;
-  flex-direction: column;
-  align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+#clients h2{
+  flex-grow: 1;
+  width: 100%;
+  text-align: center;
+}
+
+#clients{
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#clients div{
+  width: 15em;
+  height: 15em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);  
+  margin: 0.5em 0;
+}
+
+/* #clients div:hover{
+
+} */
+
+
+#clients div img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.services-decorative {
+  width: 200px;
+  height: 200px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  box-shadow: 0 0 0 100px inset, 0 0 5px grey;
+  transition: box-shadow 1s;
+  float: left;
+
+  border: 1px solid black;
+  margin:1em;
+  text-align: center;
+}
+
+
+
+.services-decorative::after {
+  width: 80%;
+  height: 80%;
+  display: block;
+  white-space: pre;
+  color: white;
+  /* color: rgb(138, 184, 190); */
+  border: 2px solid;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  transition: opacity 1s .5s;
+}
+
+
+.services-decorative:hover {
+  box-shadow: 0 0 0 5px inset, 0 0 5px grey, 0 0 10px grey inset;
+  transition: box-shadow 1s;
+}
+
+
+.services-decorative:hover::after {
+  opacity: 0.1;
+  transition: opacity .5s;
+}
+
+#marketing {
+  background-image: url(https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+  /* background-position: 25%; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgba(60, 67, 149, 0.9);
+}
+
+
+#content-development{
+  background-image: url(https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgba(60, 67, 149, 0.9);
+}
+#copy-editing{
+  background-image: url(https://images.unsplash.com/photo-1462642109801-4ac2971a3a51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1266&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgba(60, 67, 149, 0.9);
+}
+
+#proposal-writing{
+background-image: url(https://images.unsplash.com/photo-1496902526517-c0f2cb8fdb6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+background-size: cover;
+    background-repeat: no-repeat;  
+    color: rgba(60, 67, 149, 0.9);
+  }
+#research{
+background-image: url(https://images.unsplash.com/photo-1518349619113-03114f06ac3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+background-size: cover;
+background-repeat: no-repeat;
+color: rgba(60, 67, 149, 0.9);
+}
+#strategic-communications{
+background-image: url(https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80);
+background-size: cover;
+background-repeat: no-repeat;
+color: rgba(60, 67, 149, 0.9);
+}
+#writing{
+background-image: url(https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);
+background-size: cover;
+background-repeat: no-repeat;
+color: rgba(60, 67, 149, 0.9);
+}
+
+#marketing p, #content-development p, #copy-editing p, #marketing p, #proposal-writing p, #research p, #strategic-communications p, #writing p{
+  color: white;
+  font-size: 1.6em;
+}
+
+
+/* #content-development::after{
+  content: "Content Development"
+}
+
+#copy-editing::after{
+  content: "Copy Editing"
+}
+#marketing::after {
+  content: "Marketing and  Media Campaign Development";
+
+}
+
+#proposal-writing::after{
+  content: "Proposal Writing"
+}
+#research::after{
+  content: "Research"
+}
+#strategic-communications::after{
+  content: "Strategic Communications"
+}
+#writing::after{
+  content: "Writing"
+} */
+
+
+.about{
+  display: flex;
+  width: 100%;
+}
+#about{
+  width: 40%;
+  background: rgba(138, 184, 190, 0.5)
+}
+#about p{
+  padding: 0 1em 0 1em;
+  font-size: 1.8em;
+}
+#about h1{
+  margin-left: 1em;
+  font-size: ;
+}
+
+.first, .second, .third, .fourth, .fifth, .sixth, .seventh{
+  font-size: 1.5em;
+  position: relative;
+  opacity: 0;
+  color: black;
+  animation-name: fadeInUp;
+  animation-fill-mode: forwards; 
+  animation-duration: 3s; 
+  text-align: center;
+ 
+  animation-duration: 4s;
+}
+.first{
+  animation-delay: 0.2s;
+}
+.second{
+  animation-delay: 0.3s;
+}
+
+.third{
+  animation-delay: 0.4s;
+
+}
+.fourth{
+  animation-delay: 0.5s;
+
+} 
+.fifth{
+  animation-delay: 0.6s;
+
+}
+.sixth{
+  animation-delay: 0.7s;
+
+}
+.seventh{
+  animation-delay: 0.8s;
+
+}
+
+@keyframes bottomFadeUp {
+  0% {
+    position: relative;
+    bottom: -100%;
+    /* bottom: -5rem; */
+    opacity: 0;
+  }
+
+  75% {
+    position: relative;
+    bottom: 25%;
+   
+  }
+
+  100% {
+    opacity: 1;
+  }
+  
+}
+
+#footer{
+  color: white;
+  background: #097C80;
+  margin-top:2em;
+  height: 100px;
+  display: flex;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px; 
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+#footer h4, #footer p{
+  margin:0;
+}
+
+#footer p{
+  font-size: 1em;
+  margin: 3px auto;
+}
+
+#footer a{
+  text-decoration: none;
+}
+
+.normil-media-logo{
+  max-height: 60px;
+  width: auto;
+}
+
+.footer-contact{
+  padding-left: 4em;
+}
+.footer-contact + div{
+  margin-left: 25%;
+  text-align: center;
+
+}
+
+/* hamburger menu */
+#page-wrap {
+  text-align: center;
+
+  /* Prevent sidebar from showing a scrollbar on page */
+  overflow: auto;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 1em;
+  color: #d1d1d1;
+  transition: color 0.2s;
+}
+
+/* Change color on hover */
+.bm-item:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  /* font-size: 1.15em; */
+  font-size: 1.45em;
+}
+
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
+
+@media only screen and (max-width: 790px) {
+
+  header{
+    position: fixed;
+    z-index: 33;
   }
-  to {
-    transform: rotate(360deg);
+  header h2, .contact{
+    display:none;
+  }
+  .normil-media-logo {
+    height: auto;
+    width: 61%;
+    margin-left: 35%;
+  }
+
+.bm-burger-button {
+  width: 36px;
+  position: fixed;
+  max-height: 80px;
+  display: block;
+  top: 0;
+  margin: 25px auto;
+}
+
+#hero{
+  height: 50vh;
+  padding-top: 20px;
+  width: 102%;
+}
+
+.about{
+  display: block;
+  padding-top: 80px;
+}
+
+#about{
+  width: 100%;
+}
+
+#about h1 {
+  margin: 0;
+  padding-top: 0.5em;
+  text-align: center;
+}
+#about p {
+  padding: 0.7em;
+  font-size: 1.8em;
+  margin: 0;
+}
+
+#clients {
+  width: 100%;
+}
+#services {
+  padding-top: 80px;
+}
+
+#footer{
+  flex-direction: column;
+  margin:0;
+  text-align:center;
+  width: 102%;
+  height: 150px;
+}
+#footer *{
+  margin:0;
+  padding:0;
+}
+#footer p{
+  margin:0;
+}
+.hamburger-contact-icons{
+  width: 24px;
+  fill: #b8b7ad;
+}
+/* .hamburger-contact{
+  display: flex;
+} */
+.hamburger-contact p{
+ 
+  margin: 0;
+}
+.hamburger-contact a{
+  color: #b8b7ad;
+  text-decoration: none;
+}
+.bm-menu-wrap{
+  width:350px;
+}
+
+}
+
+@media only screen and (max-width: 640px) {
+  #hero{
+    height: 70vh;
+    padding-top: 20px;
+    width: 100%;
+  }
+  #footer{
+    width: 91%;
+    padding: 1em;
+  }
+  .footer-contact{
+    padding-bottom: 1em;
+  }
+  #copyright{
+    margin-top:2em;
   }
 }
