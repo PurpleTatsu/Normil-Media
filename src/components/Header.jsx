@@ -5,7 +5,7 @@ export default function Header(props) {
   return (
     <header>
       <Link to="/">
-        <img className="normil-media-logo" src="https://github.com/PurpleTatsu/Normil-Media-2020/blob/master/src/images/nm-media.png?raw=true" />
+        <img className="normil-media-logo" src="https://raw.githubusercontent.com/PurpleTatsu/Normil-Media-2020/main/src/images/nm-media.png" />
 
       </Link>
       {/* <Link to="/"><h1>Normil Media</h1></Link> */}
